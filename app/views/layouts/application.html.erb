@@ -6,11 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 <body class='<%= controller.controller_name %>'><!--why???????? pg72-->
-  <div id = "banner>"
+  <div id = "banner">
     <%= image_tag("logo.png") %>
-    <% @page_title || "Árvore de Livros - Sombra Books Filial"%>
+    <%= @page_title  || "Árvore de Livros - Sombra Books"%>
   </div>
   <div id = "columns">
     <div id = "side">
@@ -22,15 +21,10 @@
       </ul>
     </div>
     <div id="main">
-      <%= yield%>
+        <%=yield%>
     </div>
   </div>
 </body>
 </html>
 
-
-
-<%= yield %>
-
-</body>
-</html>
+<!--><%= yield %></!-->

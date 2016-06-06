@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'store/index'
 
   resources :products
-
+end
   Depot::Application.routes.draw do
     get "store/index"
     resources :products
@@ -62,4 +62,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
