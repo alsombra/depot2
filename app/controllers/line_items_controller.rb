@@ -1,7 +1,8 @@
 class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create]
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy, :decrement]
+
 
   # GET /line_items
   # GET /line_items.json
@@ -74,5 +75,22 @@ class LineItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
       params.require(:line_item).permit(:product_id)
+    end
+
+    def decrement
+      #@cart = current_item ???
+      respond_to do |format|
+        if @line_item.quantity ==1
+          @line.item.destroy
+          format.html { render 'destroy'}
+          format.js{ render 'carts/destroy' if !@cart.line_items.present?}
+          format.json { head :ok}
+        else
+          @line_item.update_attribute(:quantity, @line_item.quantity -=1)
+          format.html {redirect_to store_url}
+          format.js {@current_item = @line_item}
+          format.json { head :ok}
+        end
+      end
     end
 end
