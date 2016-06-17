@@ -30,9 +30,6 @@
       </ul>
     </div>
     <div id="main">
-       <% unless notice.nil? %>
-          <p id="notice"><%= flash[:notice] %></p>
-        <%end%>
         <%= yield %>
     </div>
   </div>

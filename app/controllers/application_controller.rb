@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   helper_method :show_session_counter_message
 
   def date_loaded
-    return Time.now.strftime("%Y-%m-%d %H:%M:%S")
+    return Time.now.strftime("%Y-%m-%d %H:%M")
   end
 end
