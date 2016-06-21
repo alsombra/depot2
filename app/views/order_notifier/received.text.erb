@@ -1,0 +1,11 @@
+Caro(a) <%= @order.name %>
+Obrigado por comprar na loja do Sombra.
+
+Vossa senhoria pediu os seguintes itens:
+<%= render @order.line_items -%>
+
+A gente vai mandar emails para notifica-lo(a) quando cada item for enviado.
+
+Com carinho,
+
+Antonio Luis Sombra
