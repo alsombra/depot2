@@ -5,4 +5,8 @@ module ApplicationHelper
     end
     content_tag("div", attributes, &block)
   end
+
+  def title(page_title)
+  content_for(:title) { page_title }
+  end
 end

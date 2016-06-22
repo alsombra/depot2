@@ -34,7 +34,6 @@ Rails.application.configure do
     "alsombratestes@gmail.com",
     password:
     "senhadeteste!",
-    :authentication => :login,
     enable_starttls_auto: true
   }
   # Print deprecation notices to the Rails logger.

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 .depot_form {
   fieldset {
     background: #b9d2b9;
@@ -133,3 +134,7 @@
     }
    }
  }
+ .locale {
+float: right;
+margin: -0.25em 0.1em;
+}
