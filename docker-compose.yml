@@ -9,6 +9,7 @@ services:
     volumes:
       - .:/home/app
       - ./docker/database.yml:/home/app/config/database.yml
+      - /Data/web/tmp:/home/app/tmp
       - /Data/web/assets:/home/app/public/assets
       - ./docker/web/.bundle/dev/config:/home/app/.bundle/config
       - /Data/web/bundle_development:/home/app/vendor/bundle
