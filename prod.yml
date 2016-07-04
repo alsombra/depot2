@@ -7,10 +7,12 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/home/app
       - /Data/web/assets:/home/app/public/assets
-      - ./docker/web/.bundle/dev/config:/home/app/.bundle/config
-      - /Data/web/bundle_development:/home/app/vendor/bundle
+      - ./docker/web/.bundle/prod/config:/home/app/.bundle/config
+      - /Data/web/bundle_production:/home/app/vendor/bundle
+    environment:
+      - RAILS_ENV=production
+      - SECRET_KEY_BASE=e824f2eab5c0e871ae1efc5e616cf2d0e1f4455560ac6483a6782379ec361c789dec7ac7f7669f126b082b40a80ab515d3aadbcad53b60fe7ef3ee09bb157844
     command: bundle exec rails s --binding=0.0.0.0
   db:
     image: mysql
