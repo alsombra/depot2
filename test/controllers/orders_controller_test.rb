@@ -53,7 +53,7 @@ class OrdersControllerTest < ActionController::TestCase
     assert_equal flash[:notice], 'Your cart is empty'
   end
 
-  test "should get new" do
+  test "should get new order" do
     item = LineItem.new
     item.build_cart
     item.product = products(:ruby)

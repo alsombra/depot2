@@ -1,17 +1,7 @@
 require 'test_helper'
 class UserStoriesTest < ActionDispatch::IntegrationTest
 fixtures :products
-#
-#
-#
-#
-A user goes to the index page. They select a product, adding it to their
-cart, and check out, filling in their details on the checkout form. When
-they submit, an order is created containing their information, along with a
-single line item corresponding to the product they added to their cart.
-report erratum • discussChapter 13. Task H: Sending Mail
-•
-188
+
 test "buying a product" do
 LineItem.delete_all
 Order.delete_all
